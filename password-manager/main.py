@@ -9,14 +9,14 @@ def generate_password():
     numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] # Array of numbers
     symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+'] # Array of symbols
 
-    password_letters = [choice(letters) for _ in range(randint(8, 10))] # Create a randomized array containing from 8 to 10 letters
-    password_symbols = [choice(symbols) for _ in range(randint(2, 4))] # Create a randomized array containing from 2 to 4 symbols
-    password_numbers = [choice(numbers) for _ in range(randint(2, 4))] # Create a randomized array containing from 2 to 4 numbers
+    password_letters = [choice(letters) for _ in range(randint(8, 10))] # Create a randomized list containing from 8 to 10 letters
+    password_symbols = [choice(symbols) for _ in range(randint(2, 4))] # Create a randomized list containing from 2 to 4 symbols
+    password_numbers = [choice(numbers) for _ in range(randint(2, 4))] # Create a randomized list containing from 2 to 4 numbers
 
-    password_list = password_letters + password_symbols + password_numbers # Join all password arrays
+    password_list = password_letters + password_symbols + password_numbers # Join all password lists
     shuffle(password_list) # Shuffle contents of password
 
-    password = "".join(password_list) # Join all password arrays into one string
+    password = "".join(password_list) # Join all password lists into one string
     password_entry.insert(0, password) # Insert password into password_entry
     pyperclip.copy(password) # Copy password to clipboard
 
